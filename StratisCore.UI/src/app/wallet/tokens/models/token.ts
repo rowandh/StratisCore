@@ -23,13 +23,10 @@ export class SavedToken extends Token {
       return this._balance 
     }
 
-    let bal = this._balance / (10**this.decimals);
-    console.log(bal)
-    return bal;
+    return this._balance / (10**this.decimals);
   }
 
   set balance(value: number){
-    console.log("Setter " + value);
     this._balance = value;
   }
 
