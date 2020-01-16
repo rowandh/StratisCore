@@ -119,7 +119,7 @@ export class AddTokenComponent implements OnInit, OnDestroy, Disposable {
     this.address = new FormControl('', [customTokenDetailsValidator]);
     this.ticker = new FormControl('', [customTokenDetailsValidator]);
     this.name = new FormControl('', [customTokenDetailsValidator]);
-    this.decimals = new FormControl(0, [Validators.required, Validators.min(0), Validators.max(5)]);
+    this.decimals = new FormControl(0, [Validators.required, Validators.min(0), Validators.max(8)]);
 
     this.addTokenForm = new FormGroup({
       token: this.token,
