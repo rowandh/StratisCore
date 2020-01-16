@@ -35,8 +35,8 @@ export class SavedToken extends Token {
 
   private _balance: number;
 
-  public toSendableAmount(amount: number): number {
-    if (!this.decimals) {
+  public toScaledAmount(amount: number): number {
+    if (this.decimals == null) {
       return amount;
     }
 

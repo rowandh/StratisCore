@@ -69,7 +69,7 @@ export class SendTokenComponent implements OnInit {
       gasLimit: this.gasLimit.value,
       parameters: [
         `9#${this.recipientAddress.value}`,
-        `7#${this.token.toSendableAmount(this.tokenAmount.value)}`
+        `7#${this.token.toScaledAmount(this.tokenAmount.value)}`
       ],
       methodName: 'TransferTo',
       password: this.password.value,
@@ -91,7 +91,7 @@ export class SendTokenComponent implements OnInit {
       .toPromise()
       .then(callResponse => {
         this.loading = false;
-        this.activeModal.close({ request: result, callResponse, amount: this.token.toSendableAmount(this.tokenAmount.value), recipientAddress: this.recipientAddress.value });
+        this.activeModal.close({ request: result, callResponse, amount: this.token.toScaledAmount(this.tokenAmount.value), recipientAddress: this.recipientAddress.value });
       },
         error => {
           this.loading = false;
