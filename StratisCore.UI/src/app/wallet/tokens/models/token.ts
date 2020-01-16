@@ -18,5 +18,28 @@ export class SavedToken extends Token {
     this.balance = balance;
   }
 
-  balance: number;
+  get balance(): number {
+    if (!this.decimals) {
+      return this._balance 
+    }
+
+    let bal = this._balance / (10**this.decimals);
+    console.log(bal)
+    return bal;
+  }
+
+  set balance(value: number){
+    console.log("Setter " + value);
+    this._balance = value;
+  }
+
+  private _balance: number;
+
+  public toSendableAmount(amount: number): number {
+    if (!this.decimals) {
+      return amount;
+    }
+
+    return amount * (10**this.decimals);
+  }
 }
