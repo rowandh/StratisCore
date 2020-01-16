@@ -91,7 +91,7 @@ export class SendTokenComponent implements OnInit {
       .toPromise()
       .then(callResponse => {
         this.loading = false;
-        this.activeModal.close({ request: result, callResponse, amount: this.token.toScaledAmount(this.tokenAmount.value), recipientAddress: this.recipientAddress.value });
+        this.activeModal.close({ request: result, callResponse, amount: this.tokenAmount.value, recipientAddress: this.recipientAddress.value });
       },
         error => {
           this.loading = false;
