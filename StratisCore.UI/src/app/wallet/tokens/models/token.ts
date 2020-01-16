@@ -33,6 +33,11 @@ export class SavedToken extends Token {
     this._balance = value;
   }
 
+  get step() {
+    let s = 1/10**this.decimals;
+    return s.toFixed(this.decimals);
+  }
+
   private _balance: number;
 
   public toScaledAmount(amount: number): number {
