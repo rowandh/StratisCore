@@ -70,7 +70,7 @@
       <div class="form-group clearfix" data-toggle="tooltip" data-placement="right"
         title="The amount of tokens to send">
         <label for="amount">Number of Tokens To Send</label>
-        <input formControlName="tokenAmount" id="tokenAmount" type="number" [step]="token.step" class="form-control"
+        <input formControlName="tokenAmount" id="tokenAmount" type="text" class="form-control"
           placeholder="Amount" [class.is-invalid]="tokenAmount.invalid && (tokenAmount.dirty || tokenAmount.touched)"
           min="0">
         <div *ngIf="tokenAmount.errors" class="invalid-feedback">

@@ -121,7 +121,7 @@ export class SendTokenComponent implements OnInit {
 
     const integerValidator = Validators.pattern('^[0-9][0-9]*$');
 
-    const decimalPlaceValidator = Validators.pattern('^[0-9]+(.[0-9]{0,' + this.token.decimals + '})?$');
+    const decimalPlaceValidator = Validators.pattern('^[0-9]+(\.[0-9]{0,' + this.token.decimals + '})?$');
 
     const gasLimitValidator = (gasCallLimitMinimumValidator);
 
